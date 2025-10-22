@@ -1,4 +1,4 @@
-/* Reinicio general */
+/* ===== RESETEO GENERAL ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +6,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Fondo */
+/* ===== FONDO PRINCIPAL ===== */
 body {
     background: url('imagen.png') no-repeat center center/cover;
     height: 100vh;
     color: white;
 }
 
-/* Capa oscura encima del fondo */
+/* ===== CAPA OSCURA ===== */
 .overlay {
     position: absolute;
     top: 0;
@@ -24,25 +24,24 @@ body {
     z-index: 0;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 .navbar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 70px;
+    padding: 15px 70px;
     z-index: 2;
 }
 
-/* Logo */
+/* ===== LOGO ===== */
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .logo-icon {
@@ -60,29 +59,28 @@ body {
 .logo-text p {
     font-size: 13px;
     color: #f8d5b3;
-    line-height: 1.2;
 }
 
-/* Menú */
-.navbar nav ul {
+/* ===== MENÚ PRINCIPAL ===== */
+.nav__list {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.navbar a {
+.nav__list a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.navbar a.active,
-.navbar a:hover {
+.nav__list a:hover,
+.nav__list a.active {
     color: #ff7a00;
 }
 
-/* Íconos (carrito y lupa) */
+/* ===== ÍCONOS (carrito y lupa) ===== */
 .icons {
     display: flex;
     gap: 20px;
@@ -98,15 +96,15 @@ body {
     color: #ff7a00;
 }
 
-/* Botón menú hamburguesa (oculto en PC) */
+/* ===== BOTÓN HAMBURGUESA ===== */
 .menu-toggle {
     display: none;
-    cursor: pointer;
     color: white;
     font-size: 26px;
+    cursor: pointer;
 }
 
-/* Hero Section */
+/* ===== HERO SECTION ===== */
 .hero {
     position: relative;
     display: flex;
@@ -134,7 +132,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* Botones */
+/* ===== BOTONES ===== */
 .buttons {
     display: flex;
     justify-content: center;
@@ -170,34 +168,39 @@ body {
 }
 
 /* ===================== */
-/*  🔹 RESPONSIVE DESIGN */
+/* 🔹 RESPONSIVE DESIGN  */
 /* ===================== */
 
 /* Tablets */
 @media (max-width: 1024px) {
     .navbar {
-        padding: 0 30px;
-    }
-
-    .navbar nav ul {
-        gap: 20px;
+        padding: 15px 40px;
     }
 
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
 }
 
-/* Celulares */
+/* Móviles */
 @media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
+    body {
+        background-position: center top;
+        background-size: cover;
         height: auto;
-        padding: 15px 30px;
-        background-color: rgba(0,0,0,0.7);
     }
 
-    nav ul {
+    .navbar {
+        flex-wrap: wrap;
+        background-color: rgba(0,0,0,0.7);
+        padding: 15px 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav__list {
         display: none;
         flex-direction: column;
         align-items: center;
@@ -206,43 +209,40 @@ body {
         padding: 15px 0;
     }
 
-    nav ul.active {
+    .nav__list.active {
         display: flex;
     }
 
-    .menu-toggle {
-        display: block;
-        margin-left: 15px;
+    .hero {
+        height: 90vh;
+        padding: 20px;
     }
 
     .hero-content h1 {
         font-size: 2rem;
+        margin-bottom: 15px;
     }
 
     .buttons {
         flex-direction: column;
+        gap: 10px;
     }
 
     .btn {
         width: 80%;
-        margin: 5px auto;
+        margin: 0 auto;
     }
 }
 
-/* Celulares pequeños */
+/* Móviles pequeños */
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .small-text {
-        font-size: 0.8rem;
-        letter-spacing: 3px;
-    }
-
-    .btn {
         font-size: 0.9rem;
-        padding: 10px 20px;
+        letter-spacing: 3px;
     }
 
     .logo-text h2 {
@@ -250,6 +250,11 @@ body {
     }
 
     .logo-text p {
-        font-size: 12px;
+        font-size: 11px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 }

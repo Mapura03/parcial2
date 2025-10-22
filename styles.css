@@ -1,4 +1,4 @@
-/* Reinicio general */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +6,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Fondo */
+/* Fondo principal */
 body {
     background: url('imagen.png') no-repeat center center/cover;
     height: 100vh;
     color: white;
+    overflow-x: hidden;
 }
 
 /* Capa oscura encima del fondo */
@@ -24,7 +25,6 @@ body {
     z-index: 0;
 }
 
-/* Navbar */
 .navbar {
     position: absolute;
     top: 0;
@@ -36,6 +36,7 @@ body {
     align-items: center;
     padding: 0 70px;
     z-index: 2;
+    background: rgba(0, 0, 0, 0.25);
 }
 
 /* Logo */
@@ -64,21 +65,21 @@ body {
 }
 
 /* Menú */
-.navbar ul {
+.nav-links ul {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.navbar a {
+.nav-links a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.navbar a.active,
-.navbar a:hover {
+.nav-links a.active,
+.nav-links a:hover {
     color: #ff7a00;
 }
 
@@ -98,7 +99,15 @@ body {
     color: #ff7a00;
 }
 
-/* Hero Section */
+/* Botón menú hamburguesa (solo visible en móvil) */
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
 .hero {
     position: relative;
     display: flex;
@@ -111,6 +120,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 1;
+    padding: 0 20px;
 }
 
 .small-text {
@@ -159,4 +169,87 @@ body {
 .btn.secondary:hover {
     background-color: #ff7a00;
     color: white;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 40px;
+    }
+
+    .nav-links ul {
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 25px;
+        justify-content: space-between;
+    }
+
+    /* Logo centrado */
+    .logo {
+        flex: 1;
+    }
+
+    /* Ocultar menú inicial */
+    .nav-links ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 90px;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    /* Mostrar menú al hacer clic */
+    .nav-links ul.show {
+        display: flex;
+    }
+
+    /* Mostrar ícono hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    /* Hero adaptado */
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .small-text {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }

@@ -1,246 +1,114 @@
-/* ==============================
-   REINICIO GENERAL
-============================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* ==============================
-   FONDO PRINCIPAL
-============================== */
+/* Fondo general */
 body {
-  background: url('imagen.png') no-repeat center center;
+  margin: 0;
+  height: 100vh;
+  background-image: url('fondo.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  min-height: 100vh;
+  font-family: 'Georgia', serif;
   color: white;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* ✅ Ajuste inteligente para pantallas pequeñas */
-@media (max-width: 1024px) {
-  body {
-    background-position: center top;
-    background-size: 110%;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background-position: 50% 15%;
-    background-size: 140%;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    background-position: 50% 25%;
-    background-size: 180%;
-  }
-}
-
-/* ==============================
-   CAPA OSCURA
-============================== */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.45);
-  z-index: 0;
-}
-
-/* ==============================
-   NAVBAR
-============================== */
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 70px;
-  z-index: 2;
+}
+
+/* Contenedor */
+.container {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 40px 60px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  max-width: 600px;
+  width: 90%;
 }
 
 /* Logo */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.logo-icon {
-  font-size: 35px;
-  color: #ff7a00;
+/* Título */
+h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
 }
 
-.logo-text h2 {
-  color: #ff7a00;
-  font-size: 22px;
-  font-weight: bold;
+/* Subtítulo */
+p {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.logo-text p {
-  font-size: 13px;
-  color: #f8d5b3;
-}
-
-/* Menú */
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.navbar a.active,
-.navbar a:hover {
-  color: #ff7a00;
-}
-
-/* Íconos */
-.icons {
-  display: flex;
-  gap: 20px;
-}
-
-.icons a {
-  color: white;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.icons a:hover {
-  color: #ff7a00;
-}
-
-/* ==============================
-   HERO SECTION
-============================== */
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 0 20px;
-}
-
-.small-text {
-  color: #ff7a00;
-  letter-spacing: 5px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.hero-content h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-}
-
-/* Botones */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.btn.primary {
-  background-color: #ff7a00;
-  color: white;
-}
-
-.btn.primary:hover {
-  background-color: #e96a00;
-}
-
-.btn.secondary {
-  border: 2px solid #ff7a00;
-  color: #ff7a00;
-  background: transparent;
-}
-
-.btn.secondary:hover {
-  background-color: #ff7a00;
-  color: white;
-}
-
-/* ==============================
-   RESPONSIVE
-============================== */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 0 40px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-}
-
+/* 🌍 Responsivo horizontal */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    background: rgba(0,0,0,0.5);
-    padding: 10px 0;
-    height: auto;
-    gap: 8px;
+  body {
+    background-size: contain;
   }
 
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
+  .container {
+    width: 90%;
+    padding: 25px 20px;
   }
 
-  .hero {
-    height: 90vh;
-    padding-top: 90px;
+  .logo {
+    width: 120px;
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.3;
+  h1 {
+    font-size: 1.8rem;
   }
 
-  .btn {
-    padding: 10px 20px;
-    font-size: 15px;
+  p {
+    font-size: 1rem;
   }
 }
 
+/* 📱 Pantallas pequeñas */
 @media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.6rem;
+  .container {
+    padding: 20px 15px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📲 Orientación vertical (modo portrait de celulares) */
+@media screen and (orientation: portrait) {
+  body {
+    background-size: contain;  /* mantiene las frutas visibles */
+    background-position: center center;
+    background-attachment: scroll;
+  }
+
+  .container {
+    padding: 25px 10px;
+    width: 85%;
+    max-width: 400px;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }

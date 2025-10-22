@@ -10,7 +10,7 @@
   <header class="header">
     <nav class="navbar">
       <div class="logo">🍓 Fruit Market</div>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Fruits</a></li>
@@ -23,7 +23,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Delicious Seasonal Fruits</h1>
-      <p>Fresh from the farm, perfectly ripe and full of vitamins. Enjoy the taste of nature every day.</p>
+      <p>Fresh, healthy and full of flavor — straight from the farm to your table.</p>
       <a href="#" class="btn">Shop Now</a>
     </div>
   </section>
@@ -34,7 +34,7 @@
 
   <script>
     const menuBtn = document.getElementById("menu-btn");
-    const navLinks = document.querySelector(".nav-links");
+    const navLinks = document.getElementById("nav-links");
     menuBtn.addEventListener("click", () => {
       navLinks.classList.toggle("active");
     });

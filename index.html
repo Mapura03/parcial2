@@ -1,66 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruitkha - Fresh Fruits Online</title>
-    <meta name="author" content="Santiago Mapura Hernández">
-    <meta name="description" content="Fruitkha - Fresh and Organic Fruits Online Store">
-    <meta name="keywords" content="fruit, organic, food, healthy, shop">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruitkha - Fresh Fruits Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-basket-shopping logo-icon"></i>
-            <div class="logo-text">
-                <h2>Fruitkha</h2>
-                <p>Fresh Fruits Online</p>
-            </div>
-        </div>
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-basket-shopping logo-icon"></i>
+      <div class="logo-text">
+        <h2>Fruitkha</h2>
+        <p>Fresh Fruits Online</p>
+      </div>
+    </div>
 
-        <!-- Menú principal -->
-        <nav class="nav">
-            <ul class="nav__list" id="menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Shop</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </nav>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Shop</a></li>
+      </ul>
+    </nav>
 
-        <!-- Íconos -->
-        <div class="icons">
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </div>
-    </header>
+    <div class="icons">
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    </div>
+  </header>
 
-    <!-- Hero principal -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <p class="small-text">FRESH & ORGANIC</p>
-            <h1>Delicious Seasonal Fruits</h1>
-            <div class="buttons">
-                <a href="#" class="btn primary">Fruit Collection</a>
-                <a href="#" class="btn secondary">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const menu = document.querySelector("#menu");
-        menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-        });
-    </script>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <p class="small-text">FRESH & ORGANIC</p>
+      <h1>Delicious Seasonal Fruits</h1>
+      <div class="buttons">
+        <a href="#" class="btn primary">Fruit Collection</a>
+        <a href="#" class="btn secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

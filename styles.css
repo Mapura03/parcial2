@@ -1,4 +1,4 @@
-/* Reinicio general */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +6,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Fondo general */
+/* ======= Fondo general ======= */
+/* Desktop: cover para que llene pantalla */
 body {
   background: url('imagen.png') no-repeat center center/cover;
-  height: 100vh;
+  min-height: 100vh;
   color: white;
   position: relative;
   overflow-x: hidden;
@@ -18,15 +19,12 @@ body {
 /* Capa oscura encima del fondo */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(0,0,0,0.45);
   z-index: 0;
 }
 
-/* Navbar */
+/* ======= NAVBAR ======= */
 .navbar {
   position: absolute;
   top: 0;
@@ -37,7 +35,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 70px;
-  z-index: 2;
+  z-index: 3;
+  pointer-events: auto;
+  /* ligero fondo para legibilidad en móviles cuando haga wrap */
+  background: transparent;
 }
 
 /* Logo */
@@ -62,7 +63,6 @@ body {
 .logo-text p {
   font-size: 13px;
   color: #f8d5b3;
-  line-height: 1.2;
 }
 
 /* Menú */
@@ -70,13 +70,16 @@ body {
   display: flex;
   list-style: none;
   gap: 30px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .navbar a.active,
@@ -84,23 +87,24 @@ body {
   color: #ff7a00;
 }
 
-/* Íconos (carrito y lupa) */
+/* Íconos */
 .icons {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .icons a {
   color: white;
   font-size: 18px;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .icons a:hover {
   color: #ff7a00;
 }
 
-/* Hero Section */
+/* ======= HERO ======= */
 .hero {
   position: relative;
   display: flex;
@@ -109,126 +113,186 @@ body {
   text-align: center;
   height: 100vh;
   overflow: hidden;
+  padding-top: 0; /* se ajusta en portrait */
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 90%;
+  z-index: 2;
+  max-width: 1000px;
+  width: 100%;
   padding: 0 20px;
 }
 
 .small-text {
   color: #ff7a00;
   letter-spacing: 5px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
 .hero-content h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 25px;
+  font-size: 64px;
+  line-height: 1.02;
+  font-weight: 800;
+  margin-bottom: 26px;
+  text-shadow: 0 6px 30px rgba(0,0,0,0.6);
 }
 
 /* Botones */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 12px 28px;
-  border-radius: 30px;
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .btn.primary {
-  background-color: #ff7a00;
-  color: white;
+  background: linear-gradient(180deg,#f58220 0%, #e86f17 100%);
+  color: #fff;
 }
 
 .btn.primary:hover {
-  background-color: #e96a00;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(230,111,23,0.18);
 }
 
 .btn.secondary {
-  border: 2px solid #ff7a00;
-  color: #ff7a00;
+  border: 2px solid rgba(255,255,255,0.28);
+  color: #fff;
   background: transparent;
 }
 
 .btn.secondary:hover {
-  background-color: #ff7a00;
-  color: white;
+  background: rgba(255,255,255,0.06);
 }
 
-/* ---------------- RESPONSIVE DESIGN ---------------- */
+/* =========================
+   RESPONSIVE: general breakpoints
+   ========================= */
 
-/* Tablets */
+/* Large tablets / small laptops */
 @media (max-width: 1024px) {
-  .navbar {
-    padding: 0 30px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .navbar ul {
-    gap: 15px;
-  }
+  .navbar { padding: 0 40px; }
+  .hero-content h1 { font-size: 48px; }
+  .navbar ul { gap: 20px; }
 }
 
-/* Celulares en vertical */
+/* Tablets and small screens (landscape + portrait) */
 @media (max-width: 768px) {
+  /* Ajustes de navbar para no romper layout */
   .navbar {
-    flex-direction: column;
+    padding: 12px 28px;
+    background: rgba(0,0,0,0.25);
+    flex-wrap: wrap;
     height: auto;
-    padding: 10px;
-    background: rgba(0,0,0,0.6);
+    gap: 8px;
+    align-items: flex-start;
   }
 
+  /* Menu: en móviles queremos que pueda quedar en varias líneas */
   .navbar ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
   }
 
-  .hero {
-    text-align: center;
-    background-position: center top;
-  }
-
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
+  /* Texto y botones más pequeños */
+  .hero-content h1 { font-size: 36px; margin-top: 6px; }
+  .small-text { letter-spacing: 4px; font-size: 13px; }
+  .btn { padding: 12px 22px; font-size: 14px; }
+  .hero { height: auto; padding: 80px 0 60px; } /* espacio para header */
 }
 
-/* Celulares muy pequeños */
-@media (max-width: 480px) {
-  .logo-text h2 {
-    font-size: 18px;
+/* =========================
+   FIX para ORIENTACIÓN VERTICAL (portrait)
+   ========================= */
+/* Este bloque es clave: actúa solo cuando el teléfono está vertical.
+   Ajusta background-position y tamaño para que las frutas a los lados
+   permanezcan visibles y el centro (texto/logo) no se superponga. */
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  /* Forzar que el body muestre más de la imagen en horizontal (no recortar los lados)
+     Se usa background-size mayor que cover + background-position para desplazar foco */
+  body {
+    background-position: 50% 15%;    /* desplaza el foco ligeramente hacia arriba */
+    background-size: 160% auto;      /* aumenta anchura, mantiene proporción */
+    min-height: 100vh;
+    background-attachment: scroll;
   }
 
-  .logo-icon {
-    font-size: 28px;
+  /* Asegurar overlay cubra todo */
+  .overlay {
+    background-color: rgba(0,0,0,0.55);
   }
 
+  /* Navbar: más compacto y con fondo para mejor contraste */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 18px;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+  }
+
+  /* Reducir tamaño del logo y texto para que no empuje el fondo */
+  .logo-icon { font-size: 28px; }
+  .logo-text h2 { font-size: 18px; }
+  .logo-text p { font-size: 11px; }
+
+  /* Hero: reservar espacio para navbar y centrar verticalmente con padding */
+  .hero {
+    padding-top: 80px; /* deja el header encima */
+    height: auto;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+  }
+
+  /* Texto principal se reduce para caber */
   .hero-content h1 {
-    font-size: 1.5rem;
+    font-size: 22px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .small-text { font-size: 12px; letter-spacing: 3px; }
+
+  /* Botones apilados y de ancho cómodo */
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
   }
 
   .btn {
-    padding: 10px 20px;
+    width: 84%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 12px 18px;
   }
 }
+
+/* Teléfonos muy pequeños */
+@media screen and (max-width: 420px) and (orientation: portrait) {
+  body { background-size: 200% auto; background-position: 50% 20%; }
+  .hero-content h1 { font-size: 20px; }
+  .logo-icon { font-size: 24px; }
+  .logo-text h2 { font-size: 16px; }
+  .small-text { font-size: 11px; letter-spacing: 2px; }
+  .btn { width: 88%; padding: 10px 16px; font-size: 14px; }
+}
+

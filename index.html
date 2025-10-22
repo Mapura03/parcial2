@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delicious Seasonal Fruits</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitkha - Fresh Fruits Online</title>
+
+    <!-- Meta SEO -->
+    <meta name="author" content="Santiago Mapura Hernández">
+    <meta name="keywords" content="fruits, organic, fresh, online store, fruitkha, shop">
+    <meta name="description" content="Fruitkha - Fresh and Organic Seasonal Fruits Online">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">🍓 Fruit Market</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Fruits</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <button class="menu-btn" id="menu-btn">☰</button>
-    </nav>
-  </header>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-basket-shopping logo-icon"></i>
+            <div class="logo-text">
+                <h2>Fruitkha</h2>
+                <p>Fresh Fruits Online</p>
+            </div>
+        </div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Delicious Seasonal Fruits</h1>
-      <p>Fresh, healthy and full of flavor — straight from the farm to your table.</p>
-      <a href="#" class="btn">Shop Now</a>
-    </div>
-  </section>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+        </nav>
 
-  <footer class="footer">
-    <p>© 2025 Fruit Market. All rights reserved.</p>
-  </footer>
+        <div class="icons">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    </header>
 
-  <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const navLinks = document.getElementById("nav-links");
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+    <!-- Sección principal (Hero) -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <p class="small-text">FRESH & ORGANIC</p>
+            <h1>Delicious Seasonal Fruits</h1>
+            <div class="buttons">
+                <a href="#" class="btn primary">Fruit Collection</a>
+                <a href="#" class="btn secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

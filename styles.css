@@ -1,183 +1,163 @@
-/* ===== REINICIO GENERAL ===== */
+/* -------- RESET -------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
-/* ===== FONDO ===== */
 body {
-    background: url('imagen.png') no-repeat center center/cover;
-    height: 100vh;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
 }
 
-/* ===== CAPA OSCURA ===== */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.45);
-    z-index: 0;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
+/* -------- HEADER -------- */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 0;
     z-index: 10;
 }
 
-/* ===== LOGO ===== */
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-icon {
-    font-size: 35px;
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.brand-text h1 {
+    font-size: 1.5rem;
     color: #ff7a00;
+    font-weight: 700;
 }
 
-.logo-text h2 {
-    color: #ff7a00;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 1;
+.brand-text p {
+    font-size: 0.8rem;
+    color: #f0f0f0;
 }
 
-.logo-text p {
-    font-size: 13px;
-    color: #f8d5b3;
-    line-height: 1.2;
-}
-
-/* ===== MENÚ ===== */
-nav ul {
+/* Menú principal */
+.nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
 }
 
-nav a {
+.nav-links a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-nav a.active,
-nav a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: #ff7a00;
 }
 
-/* ===== ICONOS ===== */
+/* Íconos (carrito, lupa y menú) */
 .icons {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
 }
 
-.icons a {
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.icons a:hover {
-    color: #ff7a00;
-}
-
-/* ===== BOTÓN MENÚ (MÓVIL) ===== */
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: white;
+.icons span {
+    font-size: 20px;
     cursor: pointer;
 }
 
-/* ===== HERO ===== */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* -------- HERO SECTION -------- */
 .hero {
-    position: relative;
+    height: 100vh;
+    background-image: url('background.jpg'); /* Fondo de madera o frutas */
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
+    color: white;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 0 20px;
-}
-
-.small-text {
+.hero-content h4 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
     color: #ff7a00;
-    letter-spacing: 5px;
-    font-weight: 600;
     margin-bottom: 10px;
 }
 
 .hero-content h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 25px;
 }
 
-/* ===== BOTONES ===== */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .btn {
-    padding: 12px 28px;
+    padding: 12px 25px;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
-.btn.primary {
+.btn.orange {
     background-color: #ff7a00;
     color: white;
 }
 
-.btn.primary:hover {
-    background-color: #e96a00;
-}
-
-.btn.secondary {
+.btn.border {
     border: 2px solid #ff7a00;
     color: #ff7a00;
-    background: transparent;
 }
 
-.btn.secondary:hover {
-    background-color: #ff7a00;
-    color: white;
+.btn:hover {
+    background-color: #ffa733;
+    color: #fff;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* -------- FOOTER -------- */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* -------- RESPONSIVE DESIGN -------- */
+
+/* Tablets */
 @media (max-width: 992px) {
-    .navbar {
-        padding: 0 30px;
+    header {
+        padding: 15px 30px;
     }
 
-    nav ul {
-        gap: 20px;
+    .nav-links {
+        gap: 15px;
     }
 
     .hero-content h1 {
@@ -185,62 +165,73 @@ nav a:hover {
     }
 }
 
+/* Móviles */
 @media (max-width: 768px) {
-    /* Mostrar el botón del menú */
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
     .menu-toggle {
         display: block;
     }
 
-    /* Ocultar menú por defecto */
-    nav {
-        position: absolute;
-        top: 90px;
-        right: 0;
-        background-color: rgba(0,0,0,0.85);
-        width: 100%;
-        display: none;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 18px;
-    }
-
-    .icons {
-        display: none;
-    }
-
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .hero-content h4 {
+        font-size: 1rem;
     }
 
     .buttons {
         flex-direction: column;
-        gap: 15px;
+    }
+
+    .btn {
+        width: 80%;
+        margin: 5px auto;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text h1 {
+        font-size: 1.2rem;
     }
 }
 
+/* Teléfonos pequeños */
 @media (max-width: 480px) {
-    .logo-text h2 {
-        font-size: 18px;
+    header {
+        padding: 10px 20px;
     }
 
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
-    .buttons a {
-        font-size: 14px;
-        padding: 10px 22px;
+    .hero-content h4 {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 }

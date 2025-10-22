@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitkha - Fresh Fruits Online</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ===== NAVBAR ===== -->
-    <header class="navbar">
+    <!-- Encabezado -->
+    <header>
         <div class="logo">
-            <i class="fa-solid fa-basket-shopping logo-icon"></i>
-            <div class="logo-text">
-                <h2>Fruitkha</h2>
+            <img src="logo.png" alt="Fruitkha Logo">
+            <div class="brand-text">
+                <h1>Fruitkha</h1>
                 <p>Fresh Fruits Online</p>
             </div>
         </div>
 
-        <!-- Botón menú móvil -->
-        <div class="menu-toggle" id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <nav id="nav-menu">
-            <ul>
+        <nav class="navbar">
+            <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Pages</a></li>
@@ -35,30 +29,34 @@
         </nav>
 
         <div class="icons">
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#"><span>🛒</span></a>
+            <a href="#"><span>🔍</span></a>
+            <div class="menu-toggle">&#9776;</div>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- Sección principal -->
     <section class="hero">
-        <div class="overlay"></div>
         <div class="hero-content">
-            <p class="small-text">FRESH & ORGANIC</p>
+            <h4>Fresh & Organic</h4>
             <h1>Delicious Seasonal Fruits</h1>
             <div class="buttons">
-                <a href="#" class="btn primary">Fruit Collection</a>
-                <a href="#" class="btn secondary">Contact Us</a>
+                <a href="#" class="btn orange">Fruit Collection</a>
+                <a href="#" class="btn border">Contact Us</a>
             </div>
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2025 Fruitkha. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Script para abrir/cerrar menú en móviles
-        const toggle = document.getElementById('menu-toggle');
-        const nav = document.getElementById('nav-menu');
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>

@@ -1,87 +1,243 @@
-/* Bloque principal BEM */
-.header {
-  background: rgba(0, 0, 0, 0.45);
+/* =============================
+   BASE / RESET
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+/* =============================
+   VARIABLES
+============================= */
+:root {
+  --orange: #ff7a00;
+  --orange-dark: #e86a00;
+  --overlay: rgba(0, 0, 0, 0.45);
+}
+
+/* =============================
+   BODY & OVERLAY
+============================= */
+body {
+  background: url('imagen.png') no-repeat center center/cover;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.overlay {
   position: absolute;
-  width: 100%;
+  inset: 0;
+  background-color: var(--overlay);
+  z-index: 0;
+}
+
+/* =============================
+   NAVBAR (BEM + Bootstrap grid)
+============================= */
+.navbar {
+  position: absolute;
   top: 0;
   left: 0;
-  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px;
   z-index: 10;
 }
 
-/* Logo */
-.logo-icon {
-  font-size: 1.8rem;
-  color: #ff7a00;
-}
-.logo-text h2 {
-  color: #ff7a00;
-  font-size: 1.2rem;
-  margin: 0;
-}
-.logo-text p {
-  color: #f8d5b3;
-  font-size: 0.8rem;
-  margin: 0;
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Navegación */
-.nav-link {
-  color: white !important;
+.navbar__icon {
+  font-size: 35px;
+  color: var(--orange);
+}
+
+.navbar__text h2 {
+  color: var(--orange);
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.navbar__text p {
+  font-size: 13px;
+  color: #f8d5b3;
+  line-height: 1.2;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar__menu a {
+  text-decoration: none;
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s ease;
 }
-.nav-link.active,
-.nav-link:hover {
-  color: #ff7a00 !important;
+
+.navbar__menu a:hover,
+.navbar__menu a.active {
+  color: var(--orange);
 }
 
-/* Íconos */
-.header__icons a {
+.navbar__icons {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar__icons a {
   color: white;
-  font-size: 1.2rem;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
-.header__icons a:hover {
-  color: #ff7a00;
+
+.navbar__icons a:hover {
+  color: var(--orange);
 }
 
-/* Hero */
+/* =============================
+   HERO SECTION
+============================= */
 .hero {
-  background: url('imagen.png') no-repeat center center;
-  background-size: cover;
-  min-height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 0 20px;
 }
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-.hero .container {
+
+.hero__content {
   position: relative;
   z-index: 2;
+  max-width: 800px;
 }
-.hero__tagline {
-  color: #ff7a00;
+
+.hero__small-text {
+  color: var(--orange);
   letter-spacing: 5px;
   font-weight: 600;
   margin-bottom: 10px;
 }
+
 .hero__title {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
   font-weight: 700;
   margin-bottom: 25px;
+  line-height: 1.1;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
+/* Botones */
+.hero__buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background-color: var(--orange);
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: var(--orange-dark);
+}
+
+.btn--secondary {
+  border: 2px solid var(--orange);
+  color: var(--orange);
+  background: transparent;
+}
+
+.btn--secondary:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+============================= */
+
+/* Tablets (Bootstrap sm/md) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 30px;
+    flex-wrap: wrap;
+  }
+
+  .navbar__menu {
+    gap: 18px;
+  }
+
+  .hero__title {
+    font-size: clamp(1.6rem, 6vw, 3rem);
+  }
+}
+
+/* Móviles verticales */
+@media (max-width: 600px) {
+  body {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 15px 0;
+    background: rgba(0,0,0,0.6);
+  }
+
+  .navbar__menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero {
+    height: 100vh;
+    padding: 20px;
+    justify-content: flex-start;
+  }
+
+  .hero__content {
+    margin-top: 120px;
+  }
+
   .hero__title {
     font-size: 2rem;
   }
+
   .hero__buttons {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
   }
 }

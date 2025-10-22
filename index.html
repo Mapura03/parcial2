@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fruitkha - Fresh Fruits Online</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+    <!-- ===== NAVBAR ===== -->
     <header class="navbar">
         <div class="logo">
             <i class="fa-solid fa-basket-shopping logo-icon"></i>
@@ -17,12 +18,12 @@
             </div>
         </div>
 
-        <!-- Botón menú hamburguesa (solo visible en móvil) -->
-        <div class="menu-toggle">
+        <!-- Botón menú móvil -->
+        <div class="menu-toggle" id="menu-toggle">
             <i class="fa-solid fa-bars"></i>
         </div>
 
-        <nav class="nav-links">
+        <nav id="nav-menu">
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -39,6 +40,7 @@
         </div>
     </header>
 
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
@@ -52,12 +54,11 @@
     </section>
 
     <script>
-        // --- Script para activar el menú móvil ---
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links ul');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
+        // Script para abrir/cerrar menú en móviles
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav-menu');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
         });
     </script>
 </body>

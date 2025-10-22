@@ -1,4 +1,4 @@
-
+/* ===== REINICIO GENERAL ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +6,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Fondo principal */
+/* ===== FONDO ===== */
 body {
     background: url('imagen.png') no-repeat center center/cover;
     height: 100vh;
     color: white;
-    overflow-x: hidden;
 }
 
-/* Capa oscura encima del fondo */
+/* ===== CAPA OSCURA ===== */
 .overlay {
     position: absolute;
     top: 0;
@@ -25,6 +24,7 @@ body {
     z-index: 0;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
     position: absolute;
     top: 0;
@@ -34,16 +34,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 70px;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.25);
+    padding: 0 60px;
+    z-index: 10;
 }
 
-/* Logo */
+/* ===== LOGO ===== */
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .logo-icon {
@@ -64,26 +63,26 @@ body {
     line-height: 1.2;
 }
 
-/* Menú */
-.nav-links ul {
+/* ===== MENÚ ===== */
+nav ul {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.nav-links a {
+nav a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
+nav a.active,
+nav a:hover {
     color: #ff7a00;
 }
 
-/* Íconos (carrito y lupa) */
+/* ===== ICONOS ===== */
 .icons {
     display: flex;
     gap: 20px;
@@ -99,15 +98,15 @@ body {
     color: #ff7a00;
 }
 
-/* Botón menú hamburguesa (solo visible en móvil) */
+/* ===== BOTÓN MENÚ (MÓVIL) ===== */
 .menu-toggle {
     display: none;
-    font-size: 25px;
+    font-size: 26px;
     color: white;
     cursor: pointer;
 }
 
-/* --- HERO SECTION --- */
+/* ===== HERO ===== */
 .hero {
     position: relative;
     display: flex;
@@ -136,7 +135,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* Botones */
+/* ===== BOTONES ===== */
 .buttons {
     display: flex;
     justify-content: center;
@@ -171,65 +170,58 @@ body {
     color: white;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
     .navbar {
-        padding: 0 40px;
+        padding: 0 30px;
     }
 
-    .nav-links ul {
+    nav ul {
         gap: 20px;
     }
 
     .hero-content h1 {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 15px 25px;
-        justify-content: space-between;
+    /* Mostrar el botón del menú */
+    .menu-toggle {
+        display: block;
     }
 
-    /* Logo centrado */
-    .logo {
-        flex: 1;
-    }
-
-    /* Ocultar menú inicial */
-    .nav-links ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.8);
+    /* Ocultar menú por defecto */
+    nav {
         position: absolute;
         top: 90px;
-        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.85);
+        width: 100%;
+        display: none;
+        text-align: center;
         padding: 20px 0;
     }
 
-    /* Mostrar menú al hacer clic */
-    .nav-links ul.show {
-        display: flex;
+    nav.active {
+        display: block;
     }
 
-    /* Mostrar ícono hamburguesa */
-    .menu-toggle {
-        display: block;
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 18px;
     }
 
     .icons {
         display: none;
     }
 
-    /* Hero adaptado */
     .hero-content h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 2.2rem;
     }
 
     .buttons {
@@ -239,17 +231,16 @@ body {
 }
 
 @media (max-width: 480px) {
+    .logo-text h2 {
+        font-size: 18px;
+    }
+
     .hero-content h1 {
         font-size: 1.8rem;
     }
 
-    .small-text {
-        font-size: 0.8rem;
-        letter-spacing: 3px;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+    .buttons a {
+        font-size: 14px;
+        padding: 10px 22px;
     }
 }
